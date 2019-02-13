@@ -11,7 +11,9 @@ import UIKit
 var selectedSemester: Int = -1
 
 class SemestersTableViewController: UITableViewController {
+    var allSemesters = [[]]
 
+    @IBOutlet var s: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +26,14 @@ class SemestersTableViewController: UITableViewController {
         let apiCommunication = APICommunication()
         
         
-        apiCommunication.sendPost(requestPath: "Semesters/getAll", postRequest: [[]]) { (result) in
+        apiCommunication.sendPost(requestPath: "Semesters/getAll", postRequest: []) { (result) in
             if apiCommunication.validateStatus(parsedData: result) {
+                self.allSemesters = result["payload"] as! [[Any]]
+                
+                self.s.reloadData()
+//                    print("Error: Invalid request")
+//                    apiCommunication.showError(text: "Invalid request", sender: self)
+                
                 
             }
         }
@@ -41,18 +49,19 @@ class SemestersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return  allSemesters.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "semestersCell", for: indexPath) as! GradeCategoryTableViewCell
 
-        // Configure the cell...
+        cell.labelName.text = allSemesters[indexPath.row][0] as! String
+        cell.labelGrade.text = allSemesters[indexPath.row][1] as! String
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

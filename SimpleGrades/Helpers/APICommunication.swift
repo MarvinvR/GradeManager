@@ -22,11 +22,13 @@ class APICommunication {
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
-        
-        var postString: String = postRequest[0][0] + "=" + postRequest[0][1]
-        
-        for i in 1..<postRequest.count {
-            postString += "&" + postRequest[i][0] + "=" + postRequest[i][1]
+        var postString: String = ""
+        if postRequest.count > 0 {
+            postString += postRequest[0][0] + "=" + postRequest[0][1]
+            
+            for i in 1..<postRequest.count {
+                postString += "&" + postRequest[i][0] + "=" + postRequest[i][1]
+            }
         }
         
         if UserDefaults.standard.string(forKey: "token") != nil || UserDefaults.standard.string(forKey: "token") != "" {
@@ -76,6 +78,10 @@ class APICommunication {
         } else {
             return false
         }
+    }
+    
+    public func showError(text: String, sender: UIViewController) {
+        print(text)
     }
     
     private func storeToken(token: String) {
