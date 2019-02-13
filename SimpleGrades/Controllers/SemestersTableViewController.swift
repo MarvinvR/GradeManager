@@ -13,7 +13,6 @@ var selectedSemester: Int = -1
 class SemestersTableViewController: UITableViewController {
     var allSemesters = [[]]
 
-    @IBOutlet var s: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +29,6 @@ class SemestersTableViewController: UITableViewController {
             if apiCommunication.validateStatus(parsedData: result) {
                 self.allSemesters = result["payload"] as! [[Any]]
                 
-                self.s.reloadData()
 //                    print("Error: Invalid request")
 //                    apiCommunication.showError(text: "Invalid request", sender: self)
                 

@@ -61,7 +61,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Semesters" id="imA-Z0-QMY"/>
                     <connections>
-                        <outlet property="s" destination="2ht-Hs-JlL" id="jlR-as-dTe"/>
                         <segue destination="reh-nD-mrh" kind="show" id="6cv-NB-qEx"/>
                         <segue destination="dao-Je-Zx6" kind="show" identifier="editSegue" id="gN8-0C-2QQ"/>
                         <segue destination="4iT-7u-S2h" kind="showDetail" identifier="authSegue" id="hgm-Hs-9PE"/>
