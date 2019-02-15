@@ -16,7 +16,7 @@ class APICommunication {
         
     }
     
-    public func sendPost(requestPath: String, postRequest: [[String]], completionHandler: @escaping (_ result: [String : Any]) -> Void) {
+    public func sendPost(requestPath: String, postRequest: [[Any]], completionHandler: @escaping (_ result: [String : Any]) -> Void) {
         
         let url = URL(string: apiUrl + requestPath)!
         var request = URLRequest(url: url)
@@ -24,10 +24,10 @@ class APICommunication {
         request.httpMethod = "POST"
         var postString: String = ""
         if postRequest.count > 0 {
-            postString += postRequest[0][0] + "=" + postRequest[0][1]
+            postString += (postRequest[0][0] as! String) + "=" + (postRequest[0][1] as! String)
             
             for i in 1..<postRequest.count {
-                postString += "&" + postRequest[i][0] + "=" + postRequest[i][1]
+                postString += "&" + (postRequest[i][0] as! String) + "=" + (postRequest[i][1] as! String)
             }
         }
         
@@ -51,7 +51,6 @@ class APICommunication {
                 
                 do{
                     let parsedData = try JSONSerialization.jsonObject(with: data) as! [String:Any]
-                    
                     completionHandler(parsedData)
                 } catch let parsingError {
                     print("Error", parsingError)

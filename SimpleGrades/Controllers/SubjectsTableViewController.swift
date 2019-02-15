@@ -1,29 +1,28 @@
 //
-//  SemestersTableViewController.swift
+//  SubjectsTableViewController.swift
 //  SimpleGrades
 //
-//  Created by Marvin von Rappard on 12.02.19.
+//  Created by Marvin von Rappard on 15.02.19.
 //  Copyright © 2019 Marvin von Rappard. All rights reserved.
 //
 
 import UIKit
 
-var selectedSemester: [Any] = ["", "", ""]
+var selectedSubject: [Any] = []
 
-class SemestersTableViewController: UITableViewController {
-    var allSemesters: [[Any]] = []
+class SubjectsTableViewController: UITableViewController {
+    var allSubjects: [[Any]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            if UserDefaults.standard.string(forKey: "token") == nil || UserDefaults.standard.string(forKey: "token") == "" {
-                self.performSegue(withIdentifier: "authSegue", sender: self)
-            }
-        }
-        
         reloadContent()
-        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     func reloadContent() {
@@ -35,14 +34,16 @@ class SemestersTableViewController: UITableViewController {
         
         let apiCommunication = APICommunication()
         
+        let postRequest: [[Any]] = [
+            ["semesterid", String(format: "%@", selectedSemester[0] as! CVarArg)]
+        ]
         
-        apiCommunication.sendPost(requestPath: "Semesters/getAll", postRequest: []) { (result) in
+        apiCommunication.sendPost(requestPath: "Subjects/getAll", postRequest: postRequest) { (result) in
             if apiCommunication.validateStatus(parsedData: result) {
-                self.allSemesters = result["payload"] as! [[Any]]
+                self.allSubjects = result["payload"] as! [[Any]]
                 DispatchQueue.main.async(execute: {
                     self.tableView.reloadData()
                 })
-                
                 
                 
                 
@@ -50,11 +51,6 @@ class SemestersTableViewController: UITableViewController {
                 apiCommunication.showError(text: "Invalid request", sender: self)
             }
         }
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedSemester = allSemesters[indexPath.row]
-        performSegue(withIdentifier: "openSubject", sender: self)
     }
 
     // MARK: - Table view data source
@@ -66,15 +62,15 @@ class SemestersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return  allSemesters.count
+        return allSubjects.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "semestersCell", for: indexPath) as! GradeCategoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subjectsCell", for: indexPath) as! GradeCategoryTableViewCell
 
-        cell.labelName.text = allSemesters[indexPath.row][1] as? String
-        cell.labelGrade.text = allSemesters[indexPath.row][2] as? String
+        cell.labelName.text = allSubjects[indexPath.row][1] as? String
+        cell.labelGrade.text = allSubjects[indexPath.row][2] as? String
 
         return cell
     }
