@@ -16,11 +16,12 @@ class APICommunication {
         
     }
     
-    public func sendPost(requestPath: String, postRequest: [[Any]], completionHandler: @escaping (_ result: [String : Any]) -> Void) {
+    public func sendPost(requestPath: String, postRequest: [[Any]], completionHandler: @escaping (_ result: [String: Any]) -> Void) {
         
         let url = URL(string: apiUrl + requestPath)!
         var request = URLRequest(url: url)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         var postString: String = ""
         if postRequest.count > 0 {
@@ -50,7 +51,8 @@ class APICommunication {
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode == 200 {
                 
                 do{
-                    let parsedData = try JSONSerialization.jsonObject(with: data) as! [String:Any]
+                    let parsedData = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
+                    print(parsedData)
                     completionHandler(parsedData)
                 } catch let parsingError {
                     print("Error", parsingError)

@@ -16,6 +16,8 @@ class SubjectsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = selectedSemester[1] as! String
+        
         reloadContent()
 
         // Uncomment the following line to preserve selection between presentations
@@ -52,6 +54,11 @@ class SubjectsTableViewController: UITableViewController {
             }
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedSubject = allSubjects[indexPath.row]
+        performSegue(withIdentifier: "openGrades", sender: self)
+    }
 
     // MARK: - Table view data source
 
@@ -70,7 +77,7 @@ class SubjectsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "subjectsCell", for: indexPath) as! GradeCategoryTableViewCell
 
         cell.labelName.text = allSubjects[indexPath.row][1] as? String
-        cell.labelGrade.text = allSubjects[indexPath.row][2] as? String
+        cell.labelGrade.text = String(describing: allSubjects[indexPath.row][2])
 
         return cell
     }

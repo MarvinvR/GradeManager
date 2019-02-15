@@ -1,17 +1,15 @@
 //
-//  SemestersTableViewController.swift
+//  GradesTableViewController.swift
 //  SimpleGrades
 //
-//  Created by Marvin von Rappard on 12.02.19.
+//  Created by Marvin von Rappard on 15.02.19.
 //  Copyright © 2019 Marvin von Rappard. All rights reserved.
 //
 
 import UIKit
 
-var selectedSemester: [Any] = ["", "", ""]
-
-class SemestersTableViewController: UITableViewController {
-    var allSemesters: [[Any]] = []
+class GradesTableViewController: UITableViewController {
+    var allGrades: [[Any]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +28,14 @@ class SemestersTableViewController: UITableViewController {
         let apiCommunication = APICommunication()
         
         
-        apiCommunication.sendPost(requestPath: "Semesters/getAll", postRequest: []) { (result) in
+        let postRequest: [[Any]] = [
+            ["semesterid", String(format: "%@", selectedSemester[0] as! CVarArg)],
+            ["subjectid", String(format: "%@", selectedSubject[0] as! CVarArg)]
+        ]
+        
+        apiCommunication.sendPost(requestPath: "Grades/getAll", postRequest: postRequest) { (result) in
             if apiCommunication.validateStatus(parsedData: result) {
-                self.allSemesters = result["payload"] as! [[Any]]
+                self.allGrades = result["payload"] as! [[Any]]
                 DispatchQueue.main.async(execute: {
                     self.tableView.reloadData()
                 })
@@ -47,29 +50,29 @@ class SemestersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedSemester = allSemesters[indexPath.row]
-        performSegue(withIdentifier: "openSubjects", sender: self)
+        selectedSemester = allGrades[indexPath.row]
+        //performSegue(withIdentifier: "openSubjects", sender: self)
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return  allSemesters.count
+        return  allGrades.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "semestersCell", for: indexPath) as! GradeCategoryTableViewCell
-
-        cell.labelName.text = allSemesters[indexPath.row][1] as? String
-        cell.labelGrade.text = String(describing: allSemesters[indexPath.row][2])
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "gradesCell", for: indexPath) as! GradeCategoryTableViewCell
+        
+        cell.labelName.text = allGrades[indexPath.row][1] as? String
+        cell.labelGrade.text = String(describing: allGrades[indexPath.row][2])
+        
         return cell
     }
     
