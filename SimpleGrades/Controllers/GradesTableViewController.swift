@@ -14,6 +14,8 @@ class GradesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = (selectedSubject[1] as! String) + " - " + String(describing: selectedSubject[2])
+        
         reloadContent()
         
     }
@@ -33,8 +35,6 @@ class GradesTableViewController: UITableViewController {
             ["semesterid", String(format: "%@", selectedSemester[0] as! CVarArg)],
             ["subjectid", String(format: "%@", selectedSubject[0] as! CVarArg)]
         ]
-        
-        print(postRequest)
         
         apiCommunication.sendPost(requestPath: "Grades/getAll", postRequest: postRequest) { (result) in
             if apiCommunication.validateStatus(parsedData: result) {
