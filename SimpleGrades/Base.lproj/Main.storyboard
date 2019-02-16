@@ -59,7 +59,13 @@
                             <outlet property="delegate" destination="aft-5a-lSa" id="aGo-zH-W6O"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Semesters" id="imA-Z0-QMY"/>
+                    <navigationItem key="navigationItem" title="Semesters" id="imA-Z0-QMY">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="qCp-3O-sMw">
+                            <connections>
+                                <action selector="signOut:" destination="aft-5a-lSa" id="TuU-Sx-9li"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="reh-nD-mrh" kind="show" identifier="openSubjects" id="6cv-NB-qEx"/>
                         <segue destination="dao-Je-Zx6" kind="show" identifier="editSegue" id="gN8-0C-2QQ"/>
@@ -162,9 +168,9 @@
                                 <rect key="frame" x="20" y="163" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eeQ-92-9E3">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eeQ-92-9E3">
                                 <rect key="frame" x="20" y="213" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -391,6 +397,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="LHM-dk-VVW"/>
-        <segue reference="3oR-J9-InY"/>
+        <segue reference="gN8-0C-2QQ"/>
     </inferredMetricsTieBreakers>
 </document>

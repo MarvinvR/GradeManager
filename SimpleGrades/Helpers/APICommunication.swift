@@ -32,7 +32,7 @@ class APICommunication {
             }
         }
         
-        if UserDefaults.standard.string(forKey: "token") != nil || UserDefaults.standard.string(forKey: "token") != "" {
+        if UserDefaults.standard.string(forKey: "token") != nil && UserDefaults.standard.string(forKey: "token") != "" {
             postString += "&token=" + UserDefaults.standard.string(forKey: "token")!
         }
         

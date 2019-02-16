@@ -24,6 +24,7 @@ class SemestersTableViewController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: .now()) {
             if UserDefaults.standard.string(forKey: "token") == nil || UserDefaults.standard.string(forKey: "token") == "" {
                 self.performSegue(withIdentifier: "authSegue", sender: self)
+                return
             }
         }
         
@@ -44,6 +45,11 @@ class SemestersTableViewController: UITableViewController {
                 apiCommunication.showError(text: "Invalid request", sender: self)
             }
         }
+    }
+    
+    @IBAction func signOut(_ sender: Any) {
+        UserDefaults.standard.removeObject(forKey: "token")
+        self.performSegue(withIdentifier: "authSegue", sender: self)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
