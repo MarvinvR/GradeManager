@@ -62,6 +62,10 @@ class APICommunication {
         task.resume()
     }
     
+    func checkAuth() ->Bool {
+        return UserDefaults.standard.string(forKey: "token") == nil || UserDefaults.standard.string(forKey: "token") == ""
+    }
+    
     public func validateStatus(parsedData: [String: Any]) -> Bool {
         
         let status = parsedData["status"] as! Int

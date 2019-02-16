@@ -21,14 +21,13 @@ class SemestersTableViewController: UITableViewController {
     }
     
     func reloadContent() {
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            if UserDefaults.standard.string(forKey: "token") == nil || UserDefaults.standard.string(forKey: "token") == "" {
+        let apiCommunication = APICommunication()
+        
+        
+        if apiCommunication.checkAuth() {
                 self.performSegue(withIdentifier: "authSegue", sender: self)
                 return
-            }
         }
-        
-        let apiCommunication = APICommunication()
         
         
         apiCommunication.sendPost(requestPath: "Semesters/getAll", postRequest: []) { (result) in
@@ -37,9 +36,6 @@ class SemestersTableViewController: UITableViewController {
                 DispatchQueue.main.async(execute: {
                     self.tableView.reloadData()
                 })
-                
-                
-                
                 
             } else {
                 apiCommunication.showError(text: "Invalid request", sender: self)
@@ -50,6 +46,27 @@ class SemestersTableViewController: UITableViewController {
     @IBAction func signOut(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "token")
         self.performSegue(withIdentifier: "authSegue", sender: self)
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let editAction = UITableViewRowAction(style: .default, title: "Edit", handler: {
+            (action, indexPath) in
+            self.editSemester(semester: self.allSemesters[indexPath.row])
+        })
+        editAction.backgroundColor = UIColor.orange
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {
+            (action, indexPath) in
+            self.deleteSemester(semester: self.allSemesters[indexPath.row])
+        })
+        return [deleteAction, editAction]
+    }
+    
+    func deleteSemester(semester: [Any]) {
+        print("function not implemented: delete")
+    }
+    
+    func editSemester(semester: [Any]) {
+        print("function not implemented: edit")
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

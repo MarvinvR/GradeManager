@@ -8,6 +8,8 @@
 
 import UIKit
 
+var selectedGrade: [Any] = ["", "", ""]
+
 class GradesTableViewController: UITableViewController {
     var allGrades: [[Any]] = []
 
@@ -53,7 +55,7 @@ class GradesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedSemester = allGrades[indexPath.row]
+        selectedGrade = allGrades[indexPath.row]
         //performSegue(withIdentifier: "openSubjects", sender: self)
     }
     
