@@ -43,6 +43,8 @@ class APICommunication {
                 return
             }
             
+            print(data)
+            
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(String(describing: response))")
@@ -52,7 +54,6 @@ class APICommunication {
                 
                 do{
                     let parsedData = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: Any]
-                    print(parsedData)
                     completionHandler(parsedData)
                 } catch let parsingError {
                     print("Error", parsingError)

@@ -28,10 +28,13 @@ class GradesTableViewController: UITableViewController {
         let apiCommunication = APICommunication()
         
         
+        
         let postRequest: [[Any]] = [
             ["semesterid", String(format: "%@", selectedSemester[0] as! CVarArg)],
             ["subjectid", String(format: "%@", selectedSubject[0] as! CVarArg)]
         ]
+        
+        print(postRequest)
         
         apiCommunication.sendPost(requestPath: "Grades/getAll", postRequest: postRequest) { (result) in
             if apiCommunication.validateStatus(parsedData: result) {
