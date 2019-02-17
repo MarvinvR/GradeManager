@@ -13,12 +13,14 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var inputName: UITextField!
     @IBOutlet weak var lblGrade: UILabel!
     @IBOutlet weak var inputGrade: UITextField!
+    let apiCommunication = APICommunication()
     
     
     override func viewDidLoad() {
-        let apiCommunication = APICommunication()
         
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
 
         if editorItem["type"] as! Int != 3 {
             lblGrade.isHidden = true
@@ -39,17 +41,19 @@ class EditorViewController: UIViewController {
     }
     
     @IBAction func btnDone(_ sender: Any) {
-        if editorItem["type"] as! Int == 3 {
-            "id": editorItem["id"],
-            "name": inputName.text,
-            "grade": inputGrade.text
-        } else {
-            let postRequest = [
-                "id": editorItem["id"],
-                "name": inputName.text
-            ]
+        let postRequest: [[Any]] = [
+            ["id", editorItem["id"] as Any],
+            ["name", inputName.text as Any],
+            ["grade", inputGrade.text as Any]
+        ]
+        
+        let pathString = apiCommunication.getTypeString(typeInt: editorItem["type"] as! Int) + "s/edit"
+        
+        apiCommunication.sendPost(requestPath: pathString, postRequest: postRequest) { (result) in
+            if self.apiCommunication.validateStatus(parsedData: result) {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
-        navigationController?.popViewController(animated: true)
     }
     
     func getModeString(modeBool: Bool) -> String {

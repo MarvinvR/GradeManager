@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.hideKeyboardWhenTappedAround()
+        
         inputPassword.isSecureTextEntry = true
 
         // Do any additional setup after loading the view. completionHandler: @escaping (_ result: Any) -> Void
