@@ -49,6 +49,7 @@ class SemestersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let apiCommunication = APICommunication()
         let editAction = UITableViewRowAction(style: .default, title: "Edit", handler: {
             (action, indexPath) in
             self.editSemester(semester: self.allSemesters[indexPath.row])
@@ -56,13 +57,16 @@ class SemestersTableViewController: UITableViewController {
         editAction.backgroundColor = UIColor.orange
         let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {
             (action, indexPath) in
-            self.deleteSemester(semester: self.allSemesters[indexPath.row])
+            apiCommunication.deleteItem(type: 1, id: self.allSemesters[indexPath.row][0] as! Int) { (result) in
+                if result {
+                    self.reloadContent()
+                } else {
+                    print("error")
+                }
+            }
+            
         })
         return [deleteAction, editAction]
-    }
-    
-    func deleteSemester(semester: [Any]) {
-        print("function not implemented: delete")
     }
     
     func editSemester(semester: [Any]) {

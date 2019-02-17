@@ -84,6 +84,28 @@ class APICommunication {
         }
     }
     
+    public func deleteItem(type: Int, id: Int, completionHandler: @escaping (_ result: Bool) -> Void) {
+        var deleteType = ""
+        switch type {
+        case 1:
+            deleteType = "Semester"
+        case 2:
+            deleteType = "Subject"
+        case 3:
+            deleteType = "Grade"
+        default:
+            return
+        }
+        
+        let postRequest = [
+            ["id", String(describing: id)]
+        ]
+        
+        sendPost(requestPath: deleteType + "s/delete", postRequest: postRequest) { (result) in
+            completionHandler(self.validateStatus(parsedData: result))
+        }
+    }
+    
     public func showError(text: String, sender: UIViewController) {
         print(text)
     }
