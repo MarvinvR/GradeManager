@@ -9,6 +9,11 @@
 import UIKit
 
 var selectedSemester: [Any] = ["", "", ""]
+var editorItem: [String: Any] = [
+    "type": 0,
+    "name": "",
+    "grade": 0,
+]
 
 class SemestersTableViewController: UITableViewController {
     var allSemesters: [[Any]] = []
@@ -46,6 +51,7 @@ class SemestersTableViewController: UITableViewController {
     @IBAction func signOut(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "token")
         self.performSegue(withIdentifier: "authSegue", sender: self)
+        
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -70,7 +76,15 @@ class SemestersTableViewController: UITableViewController {
     }
     
     func editSemester(semester: [Any]) {
-        print("function not implemented: edit")
+        
+        editorItem = [
+            "type": 1
+            "name": semester[1]
+            "grade": 0
+        ]
+        
+        performSegue(withIdentifier: "openSubjects", sender: self)
+
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

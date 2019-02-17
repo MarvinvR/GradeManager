@@ -85,15 +85,9 @@ class APICommunication {
     }
     
     public func deleteItem(type: Int, id: Int, completionHandler: @escaping (_ result: Bool) -> Void) {
-        var deleteType = ""
-        switch type {
-        case 1:
-            deleteType = "Semester"
-        case 2:
-            deleteType = "Subject"
-        case 3:
-            deleteType = "Grade"
-        default:
+        let deleteType = getTypeString(typeInt: type)
+        
+        if deleteType == "" {
             return
         }
         
@@ -103,6 +97,19 @@ class APICommunication {
         
         sendPost(requestPath: deleteType + "s/delete", postRequest: postRequest) { (result) in
             completionHandler(self.validateStatus(parsedData: result))
+        }
+    }
+    
+    public func getTypeString(typeInt: Int) -> String {
+        switch typeInt {
+        case 1:
+            return "Semester"
+        case 2:
+            return "Subject"
+        case 3:
+            return "Grade"
+        default:
+            return ""
         }
     }
     

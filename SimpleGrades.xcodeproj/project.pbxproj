@@ -14,6 +14,7 @@
 		9596586121FB6D9A00CB22DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9596585F21FB6D9A00CB22DF /* LaunchScreen.storyboard */; };
 		95D311472217264E003F1845 /* SubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D311462217264E003F1845 /* SubjectsTableViewController.swift */; };
 		95D3114922177BE7003F1845 /* GradesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3114822177BE7003F1845 /* GradesTableViewController.swift */; };
+		95D3114B2219DD75003F1845 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D3114A2219DD74003F1845 /* EditorViewController.swift */; };
 		95FB18AC2212D63E00D15300 /* SemestersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB18AB2212D63E00D15300 /* SemestersTableViewController.swift */; };
 		95FB18AF2212DFBC00D15300 /* APICommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB18AE2212DFBC00D15300 /* APICommunication.swift */; };
 		95FB18B12212EBB500D15300 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB18B02212EBB500D15300 /* LoginViewController.swift */; };
@@ -48,6 +49,7 @@
 		9596587221FB6D9A00CB22DF /* SimpleGradesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGradesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D311462217264E003F1845 /* SubjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewController.swift; sourceTree = "<group>"; };
 		95D3114822177BE7003F1845 /* GradesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesTableViewController.swift; sourceTree = "<group>"; };
+		95D3114A2219DD74003F1845 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		95FB18AB2212D63E00D15300 /* SemestersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemestersTableViewController.swift; sourceTree = "<group>"; };
 		95FB18AE2212DFBC00D15300 /* APICommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICommunication.swift; sourceTree = "<group>"; };
 		95FB18B02212EBB500D15300 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				95FB18B02212EBB500D15300 /* LoginViewController.swift */,
 				95D311462217264E003F1845 /* SubjectsTableViewController.swift */,
 				95D3114822177BE7003F1845 /* GradesTableViewController.swift */,
+				95D3114A2219DD74003F1845 /* EditorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				95FB18B12212EBB500D15300 /* LoginViewController.swift in Sources */,
 				95693DC52213278E00930A6F /* GradeCategoryTableViewCell.swift in Sources */,
 				95D3114922177BE7003F1845 /* GradesTableViewController.swift in Sources */,
+				95D3114B2219DD75003F1845 /* EditorViewController.swift in Sources */,
 				9596585721FB6D9900CB22DF /* AppDelegate.swift in Sources */,
 				95FB18AF2212DFBC00D15300 /* APICommunication.swift in Sources */,
 				95D311472217264E003F1845 /* SubjectsTableViewController.swift in Sources */,
