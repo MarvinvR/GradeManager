@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         ]
         
         apiCommunication.sendPost(requestPath: "Authentication/login", postRequest:  postRequest) { (result) -> Void in
-            if apiCommunication.validateStatus(parsedData: result as! [String : Any]) {
+            if apiCommunication.validateStatus(parsedData: result) {
                 DispatchQueue.main.asyncAfter(deadline: .now()) {
                     self.performSegue(withIdentifier: "signinSegue", sender: self)
                 }

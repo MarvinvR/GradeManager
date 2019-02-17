@@ -10,9 +10,12 @@ import UIKit
 
 var selectedSemester: [Any] = ["", "", ""]
 var editorItem: [String: Any] = [
+    "mode": false,
     "type": 0,
+    "id": 0,
     "name": "",
     "grade": 0,
+    "sender": UITableViewController()
 ]
 
 class SemestersTableViewController: UITableViewController {
@@ -78,9 +81,12 @@ class SemestersTableViewController: UITableViewController {
     func editSemester(semester: [Any]) {
         
         editorItem = [
-            "type": 1
-            "name": semester[1]
-            "grade": 0
+            "mode": true,
+            "type": 1,
+            "id": semester[0],
+            "name": semester[1],
+            "grade": 0,
+            "sender": self
         ]
         
         performSegue(withIdentifier: "openSubjects", sender: self)

@@ -291,7 +291,7 @@
         <!--Editor-->
         <scene sceneID="eMC-wy-0n3">
             <objects>
-                <viewController id="dao-Je-Zx6" sceneMemberID="viewController">
+                <viewController id="dao-Je-Zx6" customClass="EditorViewController" customModule="SimpleGrades" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b1e-g8-7bW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -339,7 +339,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gWS-ks-l76"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Editor" id="ujD-wJ-6TE" userLabel="Edit"/>
+                    <navigationItem key="navigationItem" title="Editor" id="ujD-wJ-6TE" userLabel="Edit">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="u2z-lX-umY">
+                            <connections>
+                                <action selector="btnDone:" destination="dao-Je-Zx6" id="h7N-CI-6Ne"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="inputGrade" destination="Y0w-uW-HIq" id="lqp-Yt-89B"/>
+                        <outlet property="inputName" destination="fVh-h4-glw" id="YWR-1l-8b4"/>
+                        <outlet property="lblGrade" destination="I8F-ef-H2s" id="THs-ji-Qbb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSp-db-khl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
