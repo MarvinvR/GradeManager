@@ -43,8 +43,8 @@ class EditorViewController: UIViewController {
     @IBAction func btnDone(_ sender: Any) {
         let postRequest: [[Any]] = [
             ["id", editorItem["id"] as! Int],
-            ["name", inputName.text as! String],
-            ["grade", inputGrade.text]
+            ["name", inputName.text! as! String!],
+            ["grade", inputGrade.text as? String]
         ]
         
         print(postRequest)
