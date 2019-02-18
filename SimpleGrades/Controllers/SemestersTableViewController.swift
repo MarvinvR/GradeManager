@@ -32,6 +32,11 @@ class SemestersTableViewController: UITableViewController {
     func reloadContent() {
         let apiCommunication = APICommunication()
         
+        selectedSemester = ["", "", ""]
+        
+        DispatchQueue.main.async(execute: {
+            self.tableView.reloadData()
+        })
         
         if apiCommunication.checkAuth() {
             self.performSegue(withIdentifier: "authSegue", sender: self)
