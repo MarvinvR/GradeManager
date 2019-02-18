@@ -25,10 +25,10 @@ class APICommunication {
         request.httpMethod = "POST"
         var postString: String = ""
         if postRequest.count > 0 {
-            postString += (postRequest[0][0] as! String) + "=" + (postRequest[0][1] as! String)
+            postString += String(describing: postRequest[0][0]) + "=" + String(describing: postRequest[0][1])
             
             for i in 1..<postRequest.count {
-                postString += "&" + (postRequest[i][0] as! String) + "=" + (postRequest[i][1] as! String)
+                postString += "&" + String(describing: postRequest[i][0]) + "=" + String(describing: postRequest[i][1])
             }
         }
         
@@ -80,6 +80,7 @@ class APICommunication {
             storeToken(token: parsedData["token"] as! String)
             return true
         } else {
+            showError(text: parsedData["payload"] as! String, sender: UIViewController())
             return false
         }
     }

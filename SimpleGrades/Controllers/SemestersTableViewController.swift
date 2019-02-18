@@ -20,12 +20,13 @@ var editorItem: [String: Any] = [
 
 class SemestersTableViewController: UITableViewController {
     var allSemesters: [[Any]] = []
+    
+    override func viewDidAppear(_ animated: Bool) {
+        reloadContent()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        reloadContent()
-        
     }
     
     func reloadContent() {
@@ -33,8 +34,8 @@ class SemestersTableViewController: UITableViewController {
         
         
         if apiCommunication.checkAuth() {
-                self.performSegue(withIdentifier: "authSegue", sender: self)
-                return
+            self.performSegue(withIdentifier: "authSegue", sender: self)
+            return
         }
         
         
@@ -89,7 +90,9 @@ class SemestersTableViewController: UITableViewController {
             "sender": self
         ]
         
-        performSegue(withIdentifier: "openSubjects", sender: self)
+        print(editorItem)
+        
+        performSegue(withIdentifier: "editSegue", sender: self)
 
     }
     

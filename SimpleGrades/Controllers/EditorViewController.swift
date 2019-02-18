@@ -42,16 +42,20 @@ class EditorViewController: UIViewController {
     
     @IBAction func btnDone(_ sender: Any) {
         let postRequest: [[Any]] = [
-            ["id", editorItem["id"] as Any],
-            ["name", inputName.text as Any],
-            ["grade", inputGrade.text as Any]
+            ["id", editorItem["id"] as! Int],
+            ["name", inputName.text as! String],
+            ["grade", inputGrade.text]
         ]
         
-        let pathString = apiCommunication.getTypeString(typeInt: editorItem["type"] as! Int) + "s/edit"
+        print(postRequest)
+        
+        let pathString = apiCommunication.getTypeString(typeInt: editorItem["type"] as! Int) + "s/update"
         
         apiCommunication.sendPost(requestPath: pathString, postRequest: postRequest) { (result) in
             if self.apiCommunication.validateStatus(parsedData: result) {
-                self.navigationController?.popViewController(animated: true)
+                DispatchQueue.main.async(execute: {
+                    self.navigationController?.popViewController(animated: true)
+                })
             }
         }
     }
