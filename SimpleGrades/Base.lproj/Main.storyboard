@@ -200,7 +200,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eFd-RF-GEB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Login" id="pzo-AT-h9j"/>
+                    <tabBarItem key="tabBarItem" title="Login" image="login" id="pzo-AT-h9j"/>
                     <connections>
                         <outlet property="inputEmail" destination="kFX-qB-TSz" id="5Ol-pC-XGl"/>
                         <outlet property="inputPassword" destination="eeQ-92-9E3" id="HHe-n2-1l8"/>
@@ -431,6 +431,9 @@
             <point key="canvasLocation" x="-1290" y="869"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="login" width="16" height="16"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LHM-dk-VVW"/>
         <segue reference="gN8-0C-2QQ"/>
