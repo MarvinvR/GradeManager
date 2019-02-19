@@ -60,19 +60,36 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Semesters" id="imA-Z0-QMY">
-                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="qCp-3O-sMw">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="qCp-3O-sMw">
                             <connections>
                                 <action selector="signOut:" destination="aft-5a-lSa" id="TuU-Sx-9li"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchDisplayController" destination="i1j-UL-kaZ" id="Ivb-xS-iYf"/>
                         <segue destination="reh-nD-mrh" kind="show" identifier="openSubjects" id="6cv-NB-qEx"/>
                         <segue destination="dao-Je-Zx6" kind="show" identifier="editSegue" id="gN8-0C-2QQ"/>
                         <segue destination="4iT-7u-S2h" kind="showDetail" identifier="authSegue" id="hgm-Hs-9PE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxA-LL-qW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Tsd-kw-EjJ">
+                    <connections>
+                        <outlet property="delegate" destination="aft-5a-lSa" id="ECg-mc-8QE"/>
+                        <outlet property="searchContentsController" destination="aft-5a-lSa" id="pkd-yL-Ut4"/>
+                        <outlet property="searchResultsDataSource" destination="aft-5a-lSa" id="wCX-7J-13C"/>
+                        <outlet property="searchResultsDelegate" destination="aft-5a-lSa" id="btT-nN-CYp"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="i1j-UL-kaZ">
+                    <connections>
+                        <outlet property="delegate" destination="aft-5a-lSa" id="o2p-rS-fU9"/>
+                        <outlet property="searchContentsController" destination="aft-5a-lSa" id="13v-vx-TEK"/>
+                        <outlet property="searchResultsDataSource" destination="aft-5a-lSa" id="seQ-BX-8Of"/>
+                        <outlet property="searchResultsDelegate" destination="aft-5a-lSa" id="Wri-bE-hs7"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="-313.125" y="868.30985915492954"/>
         </scene>
@@ -297,25 +314,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0k-f8-g52">
-                                <rect key="frame" x="20" y="108" width="374" height="23"/>
+                                <rect key="frame" x="20" y="160" width="374" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVh-h4-glw">
-                                <rect key="frame" x="20" y="141" width="374" height="30"/>
+                                <rect key="frame" x="20" y="193" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I8F-ef-H2s">
-                                <rect key="frame" x="20" y="191" width="374" height="23"/>
+                                <rect key="frame" x="20" y="243" width="374" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0w-uW-HIq">
-                                <rect key="frame" x="20" y="224" width="374" height="30"/>
+                                <rect key="frame" x="20" y="276" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -418,8 +435,8 @@
         <scene sceneID="nfV-Bc-rui">
             <objects>
                 <navigationController id="9vy-xo-6sd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EjU-cy-XIV">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="EjU-cy-XIV">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
