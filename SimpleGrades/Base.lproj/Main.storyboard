@@ -166,7 +166,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dlZ-RY-lPw"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sign up" id="gkZ-Wy-94Y"/>
+                    <tabBarItem key="tabBarItem" title="Sign up" image="baseline_person_add_black_18pt" id="gkZ-Wy-94Y"/>
                     <connections>
                         <outlet property="txtConfirmPassword" destination="hAd-DY-HYr" id="7gw-fX-dyr"/>
                         <outlet property="txtEmail" destination="oGR-6H-xwP" id="rSy-Qt-n2a"/>
@@ -229,7 +229,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eFd-RF-GEB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Login" image="login" id="pzo-AT-h9j"/>
+                    <tabBarItem key="tabBarItem" title="Login" image="baseline_lock_open_black_18pt" id="pzo-AT-h9j"/>
                     <connections>
                         <outlet property="inputEmail" destination="kFX-qB-TSz" id="5Ol-pC-XGl"/>
                         <outlet property="inputPassword" destination="eeQ-92-9E3" id="HHe-n2-1l8"/>
@@ -473,10 +473,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="login" width="16" height="16"/>
+        <image name="baseline_lock_open_black_18pt" width="36" height="36"/>
+        <image name="baseline_person_add_black_18pt" width="36" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n9K-iM-NMg"/>
+        <segue reference="LHM-dk-VVW"/>
         <segue reference="gN8-0C-2QQ"/>
     </inferredMetricsTieBreakers>
 </document>

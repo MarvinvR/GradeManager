@@ -18,6 +18,9 @@ class LoginViewController: UIViewController {
         
         self.hideKeyboardWhenTappedAround()
         
+        inputEmail.textContentType = UITextContentType.emailAddress
+        inputPassword.textContentType = UITextContentType.password
+        
         inputPassword.isSecureTextEntry = true
     }
     

@@ -84,7 +84,7 @@ class GradesTableViewController: UITableViewController {
             "type": 3,
             "id": grade[0],
             "name": grade[1],
-            "grade": 0,
+            "grade": grade[2],
             "sender": self
         ]
         
