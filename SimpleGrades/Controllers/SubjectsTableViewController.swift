@@ -16,7 +16,7 @@ class SubjectsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = (selectedSemester[1] as! String) + " - " + String(describing: selectedSemester[2])
+        self.title = (selectedSemester[1] as! String) + ": " + String(describing: selectedSemester[2])
         
         reloadContent()
 

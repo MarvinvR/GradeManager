@@ -47,7 +47,7 @@ class EditorViewController: UIViewController {
             ["grade", inputGrade.text!]
         ]
         
-        let pathString = apiCommunication.getTypeString(typeInt: editorItem["type"] as! Int) + "s/update"
+        let pathString = apiCommunication.getTypeString(typeInt: editorItem["type"] as! Int) + "s/" + (editorItem["mode"] as! Bool ? "update" : "add")
         
         apiCommunication.sendPost(requestPath: pathString, postRequest: postRequest) { (result) in
             if self.apiCommunication.validateStatus(parsedData: result) {

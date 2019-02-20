@@ -95,10 +95,21 @@ class SemestersTableViewController: UITableViewController {
             "sender": self
         ]
         
-        print(editorItem)
-        
         performSegue(withIdentifier: "editSegue", sender: self)
 
+    }
+    
+    @IBAction func addSemester(_ sender: Any) {
+        editorItem = [
+            "mode": false,
+            "type": 1,
+            "id": 0,
+            "name": "",
+            "grade": 0,
+            "sender": self
+        ]
+        
+        performSegue(withIdentifier: "editSegue", sender: self)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

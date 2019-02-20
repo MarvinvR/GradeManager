@@ -16,7 +16,7 @@ class GradesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = (selectedSubject[1] as! String) + " - " + String(describing: selectedSubject[2])
+        self.title = (selectedSubject[1] as! String) + ": " + String(describing: selectedSubject[2])
         
         reloadContent()
         

@@ -65,6 +65,11 @@
                                 <action selector="signOut:" destination="aft-5a-lSa" id="TuU-Sx-9li"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NmD-co-Ieh">
+                            <connections>
+                                <action selector="addSemester:" destination="aft-5a-lSa" id="m8H-uS-7ZV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchDisplayController" destination="i1j-UL-kaZ" id="Ivb-xS-iYf"/>
