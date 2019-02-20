@@ -76,7 +76,7 @@ class SemestersTableViewController: UITableViewController {
                 if result {
                     self.reloadContent()
                 } else {
-                    print("error")
+                    print("Error while deleting Semester")
                 }
             }
             

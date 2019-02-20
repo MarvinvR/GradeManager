@@ -300,7 +300,13 @@
                             <outlet property="delegate" destination="reh-nD-mrh" id="ISB-s6-OkT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Subjects" id="jBx-tK-gkS"/>
+                    <navigationItem key="navigationItem" title="Subjects" id="jBx-tK-gkS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uyl-No-e8h">
+                            <connections>
+                                <action selector="editSubject:" destination="reh-nD-mrh" id="BMT-3d-Snq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="AGr-Op-8HP" kind="show" identifier="openGrades" id="UFn-8H-f4I"/>
                         <segue destination="dao-Je-Zx6" kind="show" identifier="editSegue" id="3oR-J9-InY"/>
