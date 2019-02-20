@@ -35,7 +35,7 @@ class EditorViewController: UIViewController {
         
         if editorItem["mode"] as! Bool {
             inputName.text = editorItem["name"] as? String
-            inputGrade.text = String(describing: editorItem["grade"] as! Double)
+            inputGrade.text = String(describing: editorItem["grade"] as? Double ?? 0.0)
         }
         
     }
