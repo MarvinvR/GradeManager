@@ -101,7 +101,7 @@
         <!--Sign up-->
         <scene sceneID="O72-oe-q6u">
             <objects>
-                <viewController id="3aL-wb-1e6" sceneMemberID="viewController">
+                <viewController id="3aL-wb-1e6" customClass="SignupViewController" customModule="SimpleGrades" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kIQ-Wd-Kvd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -122,23 +122,26 @@
                                 <rect key="frame" x="20" y="213" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qHk-fw-fl0">
                                 <rect key="frame" x="20" y="263" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="new-password"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="new-password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAd-DY-HYr">
                                 <rect key="frame" x="20" y="313" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7B-68-Uok">
                                 <rect key="frame" x="345" y="363" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="btnSubmit:" destination="3aL-wb-1e6" eventType="touchUpInside" id="nRI-xj-bzm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -165,6 +168,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Sign up" id="gkZ-Wy-94Y"/>
                     <connections>
+                        <outlet property="txtConfirmPassword" destination="hAd-DY-HYr" id="7gw-fX-dyr"/>
+                        <outlet property="txtEmail" destination="oGR-6H-xwP" id="rSy-Qt-n2a"/>
+                        <outlet property="txtName" destination="MaM-6O-5qF" id="08Y-bB-Awm"/>
+                        <outlet property="txtPassword" destination="qHk-fw-fl0" id="PaT-zJ-0Vb"/>
                         <segue destination="9vy-xo-6sd" kind="showDetail" identifier="signinSegue" id="n9K-iM-NMg"/>
                     </connections>
                 </viewController>
@@ -469,7 +476,7 @@
         <image name="login" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LHM-dk-VVW"/>
-        <segue reference="o6c-xq-3as"/>
+        <segue reference="n9K-iM-NMg"/>
+        <segue reference="gN8-0C-2QQ"/>
     </inferredMetricsTieBreakers>
 </document>

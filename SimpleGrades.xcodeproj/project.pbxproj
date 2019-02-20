@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9555084D221D6947008953AB /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9555084C221D6947008953AB /* SignupViewController.swift */; };
 		95693DC52213278E00930A6F /* GradeCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95693DC42213278E00930A6F /* GradeCategoryTableViewCell.swift */; };
 		9596585721FB6D9900CB22DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9596585621FB6D9900CB22DF /* AppDelegate.swift */; };
 		9596585C21FB6D9900CB22DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9596585A21FB6D9900CB22DF /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9555084C221D6947008953AB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		95693DC42213278E00930A6F /* GradeCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCategoryTableViewCell.swift; sourceTree = "<group>"; };
 		9596585321FB6D9900CB22DF /* SimpleGrades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGrades.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9596585621FB6D9900CB22DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				95D311462217264E003F1845 /* SubjectsTableViewController.swift */,
 				95D3114822177BE7003F1845 /* GradesTableViewController.swift */,
 				95D3114A2219DD74003F1845 /* EditorViewController.swift */,
+				9555084C221D6947008953AB /* SignupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				95FB18B12212EBB500D15300 /* LoginViewController.swift in Sources */,
 				95693DC52213278E00930A6F /* GradeCategoryTableViewCell.swift in Sources */,
+				9555084D221D6947008953AB /* SignupViewController.swift in Sources */,
 				95D3114922177BE7003F1845 /* GradesTableViewController.swift in Sources */,
 				95D3114B2219DD75003F1845 /* EditorViewController.swift in Sources */,
 				9596585721FB6D9900CB22DF /* AppDelegate.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-var selectedSubject: [Any] = []
+var selectedSubject: [Any] = ["", "", ""]
 
 class SubjectsTableViewController: UITableViewController {
     var allSubjects: [[Any]] = []

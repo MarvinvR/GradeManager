@@ -45,8 +45,8 @@ class EditorViewController: UIViewController {
             ["id", editorItem["id"] as! Int],
             ["name", inputName.text!],
             ["grade", inputGrade.text!],
-            ["semesterid", selectedSemester[0]],
-            ["subjectid", selectedSubject[0]]
+            ["semesterid", selectedSemester[0] as? String ?? "0"],
+            ["subjectid", selectedSubject[0] as? String ?? "0"]
         ]
         
         let pathString = apiCommunication.getTypeString(typeInt: editorItem["type"] as! Int) + "s/" + (editorItem["mode"] as! Bool ? "update" : "add")
