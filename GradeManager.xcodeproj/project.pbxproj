@@ -42,14 +42,14 @@
 /* Begin PBXFileReference section */
 		9555084C221D6947008953AB /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		95693DC42213278E00930A6F /* GradeCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradeCategoryTableViewCell.swift; sourceTree = "<group>"; };
-		9596585321FB6D9900CB22DF /* SimpleGrades.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleGrades.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9596585321FB6D9900CB22DF /* GradeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9596585621FB6D9900CB22DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9596585B21FB6D9900CB22DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9596585D21FB6D9A00CB22DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9596586021FB6D9A00CB22DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9596586221FB6D9A00CB22DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9596586721FB6D9A00CB22DF /* SimpleGradesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGradesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9596587221FB6D9A00CB22DF /* SimpleGradesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleGradesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9596586721FB6D9A00CB22DF /* GradeManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradeManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9596587221FB6D9A00CB22DF /* GradeManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GradeManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D311462217264E003F1845 /* SubjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewController.swift; sourceTree = "<group>"; };
 		95D3114822177BE7003F1845 /* GradesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradesTableViewController.swift; sourceTree = "<group>"; };
 		95D3114A2219DD74003F1845 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		9596584A21FB6D9900CB22DF = {
 			isa = PBXGroup;
 			children = (
-				9596585521FB6D9900CB22DF /* SimpleGrades */,
+				9596585521FB6D9900CB22DF /* GradeManager */,
 				9596585421FB6D9900CB22DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,14 +103,14 @@
 		9596585421FB6D9900CB22DF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9596585321FB6D9900CB22DF /* SimpleGrades.app */,
-				9596586721FB6D9A00CB22DF /* SimpleGradesTests.xctest */,
-				9596587221FB6D9A00CB22DF /* SimpleGradesUITests.xctest */,
+				9596585321FB6D9900CB22DF /* GradeManager.app */,
+				9596586721FB6D9A00CB22DF /* GradeManagerTests.xctest */,
+				9596587221FB6D9A00CB22DF /* GradeManagerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9596585521FB6D9900CB22DF /* SimpleGrades */ = {
+		9596585521FB6D9900CB22DF /* GradeManager */ = {
 			isa = PBXGroup;
 			children = (
 				95D3114C2219ED55003F1845 /* Extensions */,
@@ -123,7 +123,7 @@
 				9596585F21FB6D9A00CB22DF /* LaunchScreen.storyboard */,
 				9596586221FB6D9A00CB22DF /* Info.plist */,
 			);
-			path = SimpleGrades;
+			path = GradeManager;
 			sourceTree = "<group>";
 		};
 		95D3114C2219ED55003F1845 /* Extensions */ = {
@@ -158,9 +158,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9596585221FB6D9900CB22DF /* SimpleGrades */ = {
+		9596585221FB6D9900CB22DF /* GradeManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9596587B21FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "SimpleGrades" */;
+			buildConfigurationList = 9596587B21FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "GradeManager" */;
 			buildPhases = (
 				9596584F21FB6D9900CB22DF /* Sources */,
 				9596585021FB6D9900CB22DF /* Frameworks */,
@@ -170,14 +170,14 @@
 			);
 			dependencies = (
 			);
-			name = SimpleGrades;
+			name = GradeManager;
 			productName = SimpleGrades;
-			productReference = 9596585321FB6D9900CB22DF /* SimpleGrades.app */;
+			productReference = 9596585321FB6D9900CB22DF /* GradeManager.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9596586621FB6D9A00CB22DF /* SimpleGradesTests */ = {
+		9596586621FB6D9A00CB22DF /* GradeManagerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9596587E21FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "SimpleGradesTests" */;
+			buildConfigurationList = 9596587E21FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "GradeManagerTests" */;
 			buildPhases = (
 				9596586321FB6D9A00CB22DF /* Sources */,
 				9596586421FB6D9A00CB22DF /* Frameworks */,
@@ -188,14 +188,14 @@
 			dependencies = (
 				9596586921FB6D9A00CB22DF /* PBXTargetDependency */,
 			);
-			name = SimpleGradesTests;
+			name = GradeManagerTests;
 			productName = SimpleGradesTests;
-			productReference = 9596586721FB6D9A00CB22DF /* SimpleGradesTests.xctest */;
+			productReference = 9596586721FB6D9A00CB22DF /* GradeManagerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9596587121FB6D9A00CB22DF /* SimpleGradesUITests */ = {
+		9596587121FB6D9A00CB22DF /* GradeManagerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9596588121FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "SimpleGradesUITests" */;
+			buildConfigurationList = 9596588121FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "GradeManagerUITests" */;
 			buildPhases = (
 				9596586E21FB6D9A00CB22DF /* Sources */,
 				9596586F21FB6D9A00CB22DF /* Frameworks */,
@@ -206,9 +206,9 @@
 			dependencies = (
 				9596587421FB6D9A00CB22DF /* PBXTargetDependency */,
 			);
-			name = SimpleGradesUITests;
+			name = GradeManagerUITests;
 			productName = SimpleGradesUITests;
-			productReference = 9596587221FB6D9A00CB22DF /* SimpleGradesUITests.xctest */;
+			productReference = 9596587221FB6D9A00CB22DF /* GradeManagerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9596584E21FB6D9900CB22DF /* Build configuration list for PBXProject "SimpleGrades" */;
+			buildConfigurationList = 9596584E21FB6D9900CB22DF /* Build configuration list for PBXProject "GradeManager" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -247,9 +247,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9596585221FB6D9900CB22DF /* SimpleGrades */,
-				9596586621FB6D9A00CB22DF /* SimpleGradesTests */,
-				9596587121FB6D9A00CB22DF /* SimpleGradesUITests */,
+				9596585221FB6D9900CB22DF /* GradeManager */,
+				9596586621FB6D9A00CB22DF /* GradeManagerTests */,
+				9596587121FB6D9A00CB22DF /* GradeManagerUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -318,12 +318,12 @@
 /* Begin PBXTargetDependency section */
 		9596586921FB6D9A00CB22DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9596585221FB6D9900CB22DF /* SimpleGrades */;
+			target = 9596585221FB6D9900CB22DF /* GradeManager */;
 			targetProxy = 9596586821FB6D9A00CB22DF /* PBXContainerItemProxy */;
 		};
 		9596587421FB6D9A00CB22DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9596585221FB6D9900CB22DF /* SimpleGrades */;
+			target = 9596585221FB6D9900CB22DF /* GradeManager */;
 			targetProxy = 9596587321FB6D9A00CB22DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -470,7 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WZ6VURTF6A;
-				INFOPLIST_FILE = SimpleGrades/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GradeManager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,7 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WZ6VURTF6A;
-				INFOPLIST_FILE = SimpleGrades/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/GradeManager/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -517,7 +517,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleGrades.app/SimpleGrades";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GradeManager.app/GradeManager";
 			};
 			name = Debug;
 		};
@@ -538,7 +538,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleGrades.app/SimpleGrades";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GradeManager.app/GradeManager";
 			};
 			name = Release;
 		};
@@ -585,7 +585,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9596584E21FB6D9900CB22DF /* Build configuration list for PBXProject "SimpleGrades" */ = {
+		9596584E21FB6D9900CB22DF /* Build configuration list for PBXProject "GradeManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9596587921FB6D9A00CB22DF /* Debug */,
@@ -594,7 +594,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9596587B21FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "SimpleGrades" */ = {
+		9596587B21FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "GradeManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9596587C21FB6D9A00CB22DF /* Debug */,
@@ -603,7 +603,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9596587E21FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "SimpleGradesTests" */ = {
+		9596587E21FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "GradeManagerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9596587F21FB6D9A00CB22DF /* Debug */,
@@ -612,7 +612,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9596588121FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "SimpleGradesUITests" */ = {
+		9596588121FB6D9A00CB22DF /* Build configuration list for PBXNativeTarget "GradeManagerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9596588221FB6D9A00CB22DF /* Debug */,
