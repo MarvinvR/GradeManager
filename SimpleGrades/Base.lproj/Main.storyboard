@@ -303,7 +303,7 @@
                     <navigationItem key="navigationItem" title="Subjects" id="jBx-tK-gkS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uyl-No-e8h">
                             <connections>
-                                <action selector="editSubject:" destination="reh-nD-mrh" id="BMT-3d-Snq"/>
+                                <action selector="addSubject:" destination="reh-nD-mrh" id="czk-2U-hdh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -433,7 +433,13 @@
                             <outlet property="delegate" destination="AGr-Op-8HP" id="VK3-XF-Phj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Grades" id="ct4-Lh-pjB"/>
+                    <navigationItem key="navigationItem" title="Grades" id="ct4-Lh-pjB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="L9P-pU-8YI">
+                            <connections>
+                                <action selector="addGrade:" destination="AGr-Op-8HP" id="l3p-4T-RVY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="dao-Je-Zx6" kind="show" identifier="editSegue" id="o6c-xq-3as"/>
                     </connections>
@@ -464,6 +470,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LHM-dk-VVW"/>
-        <segue reference="gN8-0C-2QQ"/>
+        <segue reference="o6c-xq-3as"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,13 +12,15 @@ var selectedGrade: [Any] = ["", "", ""]
 
 class GradesTableViewController: UITableViewController {
     var allGrades: [[Any]] = []
+    
+    override func viewDidAppear(_ animated: Bool) {
+        reloadContent()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = (selectedSubject[1] as! String) + ": " + String(describing: selectedSubject[2])
-        
-        reloadContent()
         
     }
     
@@ -52,6 +54,55 @@ class GradesTableViewController: UITableViewController {
                 apiCommunication.showError(text: "Invalid request", sender: self)
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let apiCommunication = APICommunication()
+        let editAction = UITableViewRowAction(style: .default, title: "Edit", handler: {
+            (action, indexPath) in
+            self.editGrade(grade: self.allGrades[indexPath.row])
+        })
+        editAction.backgroundColor = UIColor.orange
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete", handler: {
+            (action, indexPath) in
+            apiCommunication.deleteItem(type: 2, id: self.allGrades[indexPath.row][0] as! Int) { (result) in
+                if result {
+                    self.reloadContent()
+                } else {
+                    print("Error while deleting Semester")
+                }
+            }
+            
+        })
+        return [deleteAction, editAction]
+    }
+    
+    func editGrade(grade: [Any]) {
+        
+        editorItem = [
+            "mode": true,
+            "type": 3,
+            "id": grade[0],
+            "name": grade[1],
+            "grade": 0,
+            "sender": self
+        ]
+        
+        performSegue(withIdentifier: "editSegue", sender: self)
+        
+    }
+    
+    @IBAction func addGrade(_ sender: Any) {
+        editorItem = [
+            "mode": false,
+            "type": 3,
+            "id": 0,
+            "name": "",
+            "grade": 0,
+            "sender": self
+        ]
+        
+        performSegue(withIdentifier: "editSegue", sender: self)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

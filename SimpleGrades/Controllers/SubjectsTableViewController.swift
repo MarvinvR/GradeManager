@@ -93,7 +93,7 @@ class SubjectsTableViewController: UITableViewController {
         
     }
     
-    @IBAction func editSubject(_ sender: Any) {
+    @IBAction func addSubject(_ sender: Any) {
         editorItem = [
             "mode": false,
             "type": 2,
